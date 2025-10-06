@@ -13,7 +13,7 @@ namespace WpfSaveImage
     public class CameraModel : IDisposable
     {
         Camera cam;
-        Mat ImgGrab;
+        Mat ImgGrab ;
         bool isOK, isNG;
         Stopwatch sw = new Stopwatch();
         object mlock = new object();
