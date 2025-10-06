@@ -1,0 +1,1055 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Button Base-->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="Background" Value="{DynamicResource colorButtonNormal}"/>
+        <Setter Property="Foreground" Value="#202020"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonHover}"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="#bbb"/>
+                <Setter Property="BorderBrush" Value="#bbb"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CheckBoxJobchangeBigControlBase" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type ToggleButton}}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="Background" Value="{DynamicResource colorButtonNormal}"/>
+        <Setter Property="Foreground" Value="#202020"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonHover}"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="rbToggle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="BorderThickness" Value="1.2"/>
+        <Setter Property="Background" Value="{DynamicResource colorButtonNormal}"/>
+        <Setter Property="Foreground" Value="#404040"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonHover}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonActive}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="#bbb"/>
+                <Setter Property="BorderBrush" Value="#bbb"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="cbToggle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="BorderThickness" Value="1.2"/>
+        <Setter Property="Background" Value="{DynamicResource colorToggleButtonNormal}"/>
+        <Setter Property="Foreground" Value="#404040"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonHover}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonActive}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="#bbb"/>
+                <Setter Property="BorderBrush" Value="#bbb"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="rbLightToggle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="BorderThickness" Value="1.2"/>
+        <Setter Property="Background" Value="{DynamicResource colorToggleButtonNormal}"/>
+        <Setter Property="Foreground" Value="#404040"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonActive}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonHover}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorToggleButtonHover}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Footers-->
+    <Style x:Key="rdButtonFooter" TargetType="RadioButton" BasedOn="{StaticResource rbToggle}">
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Width" Value="130"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Margin" Value="5,5,0,5"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="ButtonFooter" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="BorderThickness" Value="1.2"/>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Margin" Value="5,5,0,5"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#0c81a2"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#fffdfb"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Borders-->
+    <Style x:Key="BorderMain" TargetType="Border">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <!--Text-->
+    <Style x:Key="TextAlignHeader" TargetType="TextBlock">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="19"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="TextAlignResult" TargetType="TextBlock">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <!--Headers-->
+    <Style x:Key="ButtonHeaderMain" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="190"/>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="FontSize" Value="12.5"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#0c81a2"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#fffdfb"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonHeaderSubs" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="190"/>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#0c81a2"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#fffdfb"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonHeaderContentControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="190"/>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="2" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Sub-Header-->
+    <Style x:Key="rdButtonSubHeader" TargetType="RadioButton" BasedOn="{StaticResource rbToggle}">
+        <Setter Property="Padding" Value="40,0"/>
+        <Setter Property="Width" Value="220"/>
+        <Setter Property="Height" Value="38"/>
+        <Setter Property="Margin" Value="0,0,2,0"/>
+        <Setter Property="BorderThickness" Value="0.8,0.8,0.8,0"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10,10,0,0"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <!--Flow View-->
+    <Style x:Key="BorderAlignView" TargetType="Border">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="{DynamicResource colorTitleMainAlignView}"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    <Style x:Key="ButtonFlowAlignView" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="2,5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="40"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="ButtonFlowControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CheckboxFlowAlignView" TargetType="CheckBox" BasedOn="{StaticResource cbToggle}">
+        <Setter Property="Margin" Value="2,5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="Background" Value="{DynamicResource colorButtonNormal}"/>
+        <Setter Property="Foreground" Value="#202020"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Scrolling Listbox-->
+    <Style TargetType="ListBoxItem">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="Border" Padding="7" SnapsToDevicePixels="True" Background="{TemplateBinding Background}">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="Gray"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="LimeGreen"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--CommonSetting View-->
+    <Style x:Key="ButtonSetupContent" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonHover}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupHeader" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderBrush" Value="#000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupHeaderPrimary" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="57"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderBrush" Value="#000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#040f16"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource colorButtonActive}"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupContentControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#fdfdfd"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupControlNotifier" TargetType="Button" BasedOn="{StaticResource ButtonSetupControl}">
+        <Style.Triggers>
+            <Trigger Property="Content" Value="OK">
+                <Setter Property="Background" Value="LimeGreen"/>
+            </Trigger>
+            <Trigger Property="Content" Value="NG">
+                <Setter Property="Background" Value="Red"/>
+            </Trigger>
+            <Trigger Property="Content" Value="Pending">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="rdButtonSetupControl" TargetType="RadioButton" BasedOn="{StaticResource rbToggle}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="rdButtonSetupLightControl" TargetType="RadioButton" BasedOn="{StaticResource rbLightToggle}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="cbButtonSetupControl" TargetType="CheckBox" BasedOn="{StaticResource cbToggle}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <!--CalibrationSetting View-->
+    <Style x:Key="ButtonSetupCalibrationHeader" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderBrush" Value="#000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupCalibrationHeaderPrimary" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderBrush" Value="#000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#040f16"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupCalibrationControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource colorButtonActive}"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupCalibrationContentControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#0c81a2"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                            Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                            To="#fffdfb"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupCalibrationContentControlStatus" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSetupCalibrationControlNotifier" TargetType="Button" BasedOn="{StaticResource ButtonSetupControl}">
+        <Style.Triggers>
+            <Trigger Property="Content" Value="OK">
+                <Setter Property="Background" Value="LimeGreen"/>
+            </Trigger>
+            <Trigger Property="Content" Value="NG">
+                <Setter Property="Background" Value="Red"/>
+            </Trigger>
+            <Trigger Property="Content" Value="Pending">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="rdButtonSetupCalibrationControl" TargetType="RadioButton" BasedOn="{StaticResource rbToggle}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="rdButtonSetupCalibrationLightControl" TargetType="RadioButton" BasedOn="{StaticResource rbLightToggle}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="cbButtonSetupCalibrationControl" TargetType="CheckBox" BasedOn="{StaticResource cbToggle}">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+
+    <!--JobchangeIO-->
+    <Style x:Key="ButtonJobchangeIOKey" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderBrush" Value="#000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonJobchangeIOName" TargetType="CheckBox" BasedOn="{StaticResource cbToggle}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="11.5"/>
+        <Setter Property="BorderBrush" Value="#000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonPress}"/>
+                <Setter Property="Foreground" Value="#fff"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource colorButtonIOValueTrue}"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonJobchangeControl" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="10, 5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource colorButtonActive}"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CheckBoxJobchangeControl" TargetType="CheckBox" BasedOn="{StaticResource CheckBoxJobchangeBigControlBase}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="10, 5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource colorButtonActive}"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="LimeGreen"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonJobchangeControlCornerLeft" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="10, 5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="11,0,0,11" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource colorButtonActive}"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonJobchangeControlCornerRight" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="10, 5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0,11,11,0" />
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource colorButtonActive}"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonJobchangeIOContentControlStatus" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="2,6,6,2"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#acacac"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#000"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--DataGrid-->
+    <Style TargetType="{x:Type DataGridCell}">
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="TextBlock.Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--Colors-->
+    <SolidColorBrush x:Key="colorButtonNormal">
+        #fffdfb
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorButtonHover">
+        #fffdfb
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorButtonActive">
+        #0c81a2
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorButtonPress">
+        #154279
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorToggleButtonNormal">
+        #fffdfb
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorToggleButtonHover">
+        #fffdfb
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorToggleButtonActive">
+        #0d1528
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorButtonIOValueTrue">
+        LimeGreen
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="colorButtonIOValueFalse">
+        Transparent
+    </SolidColorBrush>
+
+    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorTitleMainAlignView">
+        <GradientStop Color="#b72228" Offset="0.0" />
+        <GradientStop Color="#b72228" Offset="0.6" />
+        <GradientStop Color="#b72228" Offset="0.6" />
+        <GradientStop Color="#b72228" Offset="1.0" />
+    </LinearGradientBrush>
+    <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorTitleMainAlignView">
+        <GradientStop Color="#b72228" Offset="0.0" />
+        <GradientStop Color="#b72228" Offset="0.6" />
+        <GradientStop Color="#640000" Offset="0.6" />
+        <GradientStop Color="#640000" Offset="1.0" />
+    </LinearGradientBrush>-->
+    <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorButtonNormal">
+        <GradientStop Color="Transparent" Offset="0.0" />
+        <GradientStop Color="Transparent" Offset="0.5" />
+        <GradientStop Color="#10000000" Offset="0.7" />
+        <GradientStop Color="#10000000" Offset="1.0" />
+    </LinearGradientBrush>-->
+    <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorButtonHover">
+        <GradientStop Color="Transparent" Offset="0.0" />
+        <GradientStop Color="Transparent" Offset="0.4" />
+        <GradientStop Color="#28000000" Offset="0.7" />
+        <GradientStop Color="#28000000" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorButtonActive">
+        <GradientStop Color="Transparent" Offset="0.0" />
+        <GradientStop Color="Transparent" Offset="0.0" />
+        <GradientStop Color="#60000000" Offset="0.3" />
+        <GradientStop Color="#90000000" Offset="1.0" />
+    </LinearGradientBrush>-->
+    <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorButtonSetupHeader">
+        <GradientStop Color="MediumPurple" Offset="0.0" />
+        <GradientStop Color="MediumPurple" Offset="0.5" />
+        <GradientStop Color="Purple" Offset="0.7" />
+        <GradientStop Color="Purple" Offset="1.0" />
+    </LinearGradientBrush>-->
+    <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorToggleButtonNormal">
+        <GradientStop Color="Transparent" Offset="0.0" />
+        <GradientStop Color="Transparent" Offset="0.5" />
+        <GradientStop Color="#10000000" Offset="0.7" />
+        <GradientStop Color="#10000000" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorToggleButtonHover">
+        <GradientStop Color="LightGreen" Offset="0.0" />
+        <GradientStop Color="LightGreen" Offset="0.4" />
+        <GradientStop Color="LightGreen" Offset="0.7" />
+        <GradientStop Color="LightGreen" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="colorToggleButtonActive">
+        <GradientStop Color="Lime" Offset="0.0" />
+        <GradientStop Color="Lime" Offset="0.0" />
+        <GradientStop Color="Lime" Offset="0.3" />
+        <GradientStop Color="Lime" Offset="1.0" />
+    </LinearGradientBrush>-->
+
+
+    <!--DataGrid Style-->
+
+
+</ResourceDictionary>
